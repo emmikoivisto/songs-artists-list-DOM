@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <h1>Hedgehogs Rule!</h1>
+  <h1>Music list</h1>
   <p id="welcome-paragraph">Favourite artists and songs</p>
-    <form> 
+    <form id="new-item-form"> 
         <div id="form-wrapper">
             <div class="form-item">
                 <label for="artist">Artist:</label>
@@ -24,8 +24,8 @@
             </div>
 
             <div class="form-item">
-                <label for="nationality">Language:</label>
-                <select id="nationality">
+                <label for="language">Language:</label>
+                <select id="language">
                     <option value="" disabled selected></option>
                     <option value="korean">Korean</option>
                     <option value="finnish">Finnish</option>
@@ -38,8 +38,6 @@
     </form>
     <input type="submit" value="delete-all">
   <p class="main-list">List of favourite songs and artist:<p>
-  <ul>
-
-  </ul>
+  <ul id="list"></ul>
 </body>
 </html>

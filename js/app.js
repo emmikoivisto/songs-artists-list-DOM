@@ -1,17 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const title = document.querySelector("h1")
-    title.textContent = "Alfred rules"
+    
+    const form = document.querySelector("#new-item-form");
+    form.addEventListener('submit', handleSubmit);
+    })
 
-    const redListItem = document.querySelector('li.red');
-    redListItem.textContent = "ALFRED";
-    redListItem.classList.add('bold');
-    console.dir(redListItem);
 
-    const newListItem = document.createElement('li');
-    newListItem.textContent = "Purple";
-    newListItem.classList.add('purple');
-    console.log(newListItem)
+    const handleSubmit = function (event) {
+        event.preventDefault();
 
-    const list = document.querySelector('ul');
-    list.appendChild(newListItem);
-});
+        const songListItem = createSongListItem(event.target);
+        const mainList = document.querySelector("#list");
+        mainList.appendChild(songListItem);
+
+        event.target.reset();
+    }
+
+    const createSongListItem = function (form) {
+        const songListItem = document.createElement('li');
+        songListItem.classList.add('song-list-item');
+
+        const artist = document.createElement('h2');
+        artist.textContent = form.artist.value;
+        songListItem.appendChild(artist);
+
+        const song = document.createElement('h3');
+        song.textContent = form.song.value;
+        songListItem.appendChild(song);
+
+        const language = document.createElement('p')
+        language.textContent = form.language.value;
+        songListItem.appendChild(language);
+
+        return songListItem;
+    }
