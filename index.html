@@ -15,12 +15,17 @@
         <div id="form-wrapper">
             <div class="form-item">
                 <label for="artist">Artist:</label>
-                <input type="text" id="artist">
+                <input type="text" id="artist" required>
             </div>
 
             <div class="form-item">
                 <label for="song">Song:</label>
-                <input type="text" id="song">
+                <input type="text" id="song" required>
+            </div>
+
+            <div class="form-item">
+                <label for="album">Album:</label>
+                <input type="text" id="album">
             </div>
 
             <div class="form-item">
@@ -36,8 +41,11 @@
         </div>
         <input type="submit" value="save">
     </form>
-    <input type="submit" value="delete-all">
+
+    <button id="delete-all">Delete All</button>
+
   <p class="main-list">List of favourite songs and artist:<p>
   <ul id="list"></ul>
+  
 </body>
 </html>

@@ -2,7 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const form = document.querySelector("#new-item-form");
     form.addEventListener('submit', handleSubmit);
-    })
+
+    const deleteAll = document.querySelector("#delete-all");
+    deleteAll.addEventListener('click', handleDeleteAll);
+    });
 
 
     const handleSubmit = function (event) {
@@ -27,9 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
         song.textContent = form.song.value;
         songListItem.appendChild(song);
 
+        const album = document.createElement('h3');
+        album.textContent = form.album.value;
+        songListItem.appendChild(album);
+
         const language = document.createElement('p')
         language.textContent = form.language.value;
         songListItem.appendChild(language);
 
         return songListItem;
+    }
+
+    const handleDeleteAll = function (event) {
+        console.log(event)
+        const mainList = document.querySelector('#list');
+        mainList.innerHTML = '';
     }

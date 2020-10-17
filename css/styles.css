@@ -1,7 +1,19 @@
-#welcome-paragraph {
+body {
+    flex-wrap: wrap;
+    text-align: center;
+}
+  
+h1 {
+    /* text-align: center; */
+}
+
+  #welcome-paragraph {
     font-family: Arial, Helvetica, sans-serif;
   }
   
+  #list {
+    list-style: none;
+  }
   .blue {
     color: #0000CC;
   }
