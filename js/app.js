@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const deleteAll = document.querySelector("#delete-all");
     deleteAll.addEventListener('click', handleDeleteAll);
-    });
+});
 
 
     const handleSubmit = function (event) {
         event.preventDefault();
-
-        const songListItem = createSongListItem(event.target);
+        console.log(event)
+        const songListItem = createSongListItem(event.target); //takes the whole form
         const mainList = document.querySelector("#list");
         mainList.appendChild(songListItem);
 
@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return songListItem;
     }
 
-    const handleDeleteAll = function (event) {
-        console.log(event)
+    const handleDeleteAll = function () {
+        // console.log(event)
         const mainList = document.querySelector('#list');
         mainList.innerHTML = '';
     }
